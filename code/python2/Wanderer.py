@@ -1,4 +1,9 @@
-#!/usr/bin/python
+"""This module is part of Swampy, a suite of programs available from
+allendowney.com/swampy.
+
+Copyright 2010 Allen B. Downey
+Distributed under the GNU General Public License at gnu.org/licenses/gpl.html.
+"""
 
 # import everything we need from World.py...
 from TurtleWorld import *
@@ -13,22 +18,25 @@ class Wanderer(Turtle):
     # the first parameter is the new turtle itself,
     # which is provided automatically when we invoke
     # Wanderer()
-    def __init__(self, world, speed=1, clumsiness=60):
-        Turtle.__init__(self, world)
+    def __init__(self, speed=1, clumsiness=60):
+        # first, make a Turtle
+        Turtle.__init__(self)
+
+        # then add the other attributes that make it a Wanderer
         self.delay = 0
         # speed is the distance the Wanderer moves per step
         self.speed = speed
         # clumsiness determines the ability of the Wanderer to
         # track a straight line
         self.clumsiness = clumsiness
-        # turtles start out facing in a random direction
+        # Wanderers start out facing in a random direction
         self.rt(randint(0,360))
 
     # distance is a function that can be invoked on a Wanderer
     # it is supposed to return the distance to the origin
     def distance(self):
         # change the following line to compute distance correctly
-        return self.x + self.y
+        return self.get_x() + self.get_y()
 
     # step is invoked whenever the turtle is supposed to move
     def step(self):
@@ -50,8 +58,8 @@ world.setup_run()
 
 # make three Wanderers with different speed and clumsiness attributes
 for i in range(1,4):
-    Wanderer(world, i, i*45)
+    Wanderer(i, i*45)
 
 # tell world to start processing events (button presses, etc)
-world.mainloop()
+wait_for_user()
 

@@ -1,3 +1,11 @@
+"""This file contains code for use with "Python for Software Design",
+available from Cambridge University Press, and "Think Python,"
+available from greenteapress.com
+
+Copyright 2010 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+"""
+
 import os
 import re
 
@@ -35,7 +43,7 @@ def process_file(filename, f, num=float('Inf')):
     for line in fp:
         line = line.rstrip()
         if line == '': continue
-        if line[0] == '-': break
+        if line[0] == '-----': break
 
         # split the line into actor info and movie info;
         # keep track of the current actor

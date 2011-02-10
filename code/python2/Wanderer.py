@@ -14,11 +14,15 @@ from random import *
 # a Wanderer is a kind of turtle
 class Wanderer(Turtle):
 
-    # this is the function that creates new turtles.
-    # the first parameter is the new turtle itself,
-    # which is provided automatically when we invoke
-    # Wanderer()
     def __init__(self, speed=1, clumsiness=60):
+        """Initializes a Wanderer.
+
+        This is the function that creates new turtles.
+        the first parameter is the new turtle itself,
+        which is provided automatically when we invoke
+        Wanderer()
+
+        """
         # first, make a Turtle
         Turtle.__init__(self)
 
@@ -32,16 +36,22 @@ class Wanderer(Turtle):
         # Wanderers start out facing in a random direction
         self.rt(randint(0,360))
 
-    # distance is a function that can be invoked on a Wanderer
-    # it is supposed to return the distance to the origin
     def distance(self):
+        """Computes the distance from the Turtle to the origin."""
+
         # change the following line to compute distance correctly
         return self.get_x() + self.get_y()
 
-    # step is invoked whenever the turtle is supposed to move
     def step(self):
-        # here is how to invoke a function on a Wanderer
-        d = self.distance()
+        """Invoked whenever the turtle is supposed to move."""
+
+        # you are not allowed to modify this method
+
+        # here is how to invoke a method on a Wanderer
+        dist = self.distance()
+
+        # call the function that keeps the Wanderers in bounds
+        self.keep_in_bounds(dist)
         
         # choose a random direction and turn
         dir = randint(0,self.clumsiness) - randint(0,self.clumsiness)
@@ -49,6 +59,13 @@ class Wanderer(Turtle):
         
         # move forward according to the speed attribute
         self.fd(self.speed)
+
+    def keep_in_bounds(self, dist):
+        """Turns the Turtle in order to keep it in bounds."""
+
+        # you should modify this method
+        pass
+        
 
 # create a new TurtleWorld
 world = TurtleWorld()

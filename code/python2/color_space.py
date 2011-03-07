@@ -1,4 +1,8 @@
-"""
+"""This program is part of an exercise in
+Think Python: An Introduction to Software Design, by Allen Downey.
+
+Copyright 2010 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 This module uses color_list and Visual Python to 
 draw the X11 colors as spheres in 3-D RGB space.
@@ -14,8 +18,13 @@ Users can zoom and rotate using the usual Visual interface:
 
 Clicking on a sphere prints the color names and toggles a label.
 
-Allen B. Downey
-2008
+Usage:
+
+python color_space.py
+
+or
+
+python color_space.py resize
 
 """
 

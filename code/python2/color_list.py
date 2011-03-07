@@ -1,4 +1,8 @@
-"""
+"""This program is part of an exercise in
+Think Python: An Introduction to Software Design, by Allen Downey.
+
+Copyright 2010 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 This module provides read_colors, which takes an optional
 filename as an argument and returns 
@@ -14,8 +18,6 @@ If the filename is provided, read_colors uses it; otherwise
 it searches for the X11 color list in a file named rgb.txt.
 It checks the usual places first and then uses find if necessary.
 
-Allen B. Downey
-2008
 
 """
 
@@ -24,7 +26,8 @@ import re
 
 def read_colors(filename=None):
     """find the list of X11 colors, parse the file and return
-    colors: a dictionary that maps color names to rgb tuples, and
+
+    colors: a dictionary that maps color names to rgb tuples
     rgbs: a sorted list of pairs, where each pair is an rgb tuple
     and a sorted list of color names.
 
@@ -36,6 +39,7 @@ def read_colors(filename=None):
     for rgb, names in rgbs:
         names.sort()
     return colors, rgbs
+
 
 def invert_dict(d):
     """return an inverse dictionary that maps from values to
@@ -49,6 +53,7 @@ def invert_dict(d):
         else:
             inv[val].append(key)
     return inv
+
 
 def print_rgbs(rgbs):
     """rgbs is a sorted list of pairs, where each pair is an
@@ -87,6 +92,7 @@ def read_file(filename=None):
 
     return d
 
+
 def find_file():
     """try to find rgb.txt, either by looking in the usual places
     or by using find (which is slow)
@@ -101,11 +107,12 @@ def find_file():
 
     return filename
 
+
 def find_file1():
     """look for rgb.txt is the usual places"""
     files = [
-    '/usr/share/X11/rgb.txt',
     '/etc/X11/rgb.txt',
+    '/usr/share/X11/rgb.txt',
     '/usr/local/lib/X11/rgb.txt',
     '/usr/lib/X11/rgb.txt',
     '/X11/R5/lib/X11/rgb.txt',
@@ -116,6 +123,7 @@ def find_file1():
     for file in files:
         if os.path.exists(file):
             return file
+
 
 def find_file2():
     """use find to list all files with the name rgb.txt, and return

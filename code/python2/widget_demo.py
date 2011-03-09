@@ -1,12 +1,18 @@
-# Tkinter Widget Demo
-# Allen Downey
-#
-# This program demonstrates how to use the Gui module
-# to create and operate on Tkinter widgets.
-#
-# The documentation for the widgets is at
-# http://www.pythonware.com/library/tkinter/introduction/
-#
+"""Solution to an exercise from
+Think Python: An Introduction to Software Design
+
+Copyright 2010 Allen B. Downey
+imdb.py:License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
+This program requires Gui.py, which is part of
+Swampy; you can download it from thinkpython.com/swampy.
+
+This program demonstrates how to use the Gui module
+to create and operate on Tkinter widgets.
+
+The documentation for the widgets is at
+http://www.pythonware.com/library/tkinter/introduction/
+"""
 
 from Gui import *
 
@@ -105,7 +111,7 @@ bu = g.bu(text='Apply color', command=apply_color)
 g.endcol()
 
 # fill the listbox with color names
-fp = open('/usr/lib/X11/rgb.txt')
+fp = open('/etc/X11/rgb.txt')
 fp.readline()
 
 for line in fp:

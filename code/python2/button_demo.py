@@ -1,8 +1,8 @@
-"""
-
-Solution to an exercise from
+"""Solution to an exercise from
 Think Python: An Introduction to Software Design
-Allen B. Downey
+
+Copyright 2010 Allen B. Downey
+imdb.py:License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 This program requires Gui.py, which is part of
 Swampy; you can download it from thinkpython.com/swampy.

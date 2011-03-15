@@ -1,3 +1,10 @@
+"""Example code using Python threads.
+
+Copyright 2010 Allen B. Downey
+imdb.py:License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
+"""
+
 from threading import Thread
 from time import sleep
 

@@ -1,7 +1,15 @@
-from RemoteObject import *
+"""Example using the remote_object wrapper for Pyro.
+
+Copyright 2010 Allen B. Downey
+imdb.py:License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
+"""
+
+import sys
+import remote_object
 
 def main(script, name='bob', *args):
-    ns = NameServer()
+    ns = remote_object.NameServer()
     server = ns.get_proxy(name)
 
     print server.mul(111,9)

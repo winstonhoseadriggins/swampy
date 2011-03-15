@@ -1,6 +1,14 @@
-from RemoteObject import *
+"""Example using the remote_object wrapper for Pyro.
 
-class MathServer(RemoteObject):
+Copyright 2010 Allen B. Downey
+imdb.py:License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
+"""
+
+import sys
+import remote_object
+
+class MathServer(remote_object.RemoteObject):
     def mul(s, arg1, arg2): return arg1*arg2
     def add(s, arg1, arg2): return arg1+arg2
     def sub(s, arg1, arg2): return arg1-arg2

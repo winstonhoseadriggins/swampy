@@ -1,5 +1,16 @@
+"""Example of the Observer pattern using Pyro.
+
+Copyright 2010 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
+"""
+
 import random
-from RemoteObject import *
+
+# this import has to be here in case we get a Pyro error from an RMI
+import Pyro.errors
+from remote_object import RemoteObject, NameServer
+
 
 class Observer(RemoteObject):
     """An Observer is an object that watches another object and reacts
@@ -33,6 +44,6 @@ class Observer(RemoteObject):
         state = proxy.get_state()
         print 'Observer notified; new state =', state
 
-obs = Observer('bob')
+obs = Observer('simple_subject')
 obs.requestLoop()
 

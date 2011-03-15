@@ -14,7 +14,7 @@ import signal
 import Pyro.core
 import Pyro.util
 import Pyro.naming
-
+import Pyro.errors
 
 DEFAULT_NS_HOST = 'rocky.olin.edu'
 

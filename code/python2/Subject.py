@@ -1,5 +1,16 @@
-from RemoteObject import *
+"""Example of the Observer pattern using Pyro.
+
+Copyright 2010 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
+"""
+
 from copy import copy
+
+# this import has to be here in case we get a Pyro error from an RMI
+import Pyro.errors
+from remote_object import RemoteObject, NameServer
+
 
 class Subject(RemoteObject):
     """A Subject is an object that keeps track of the Observers
@@ -33,9 +44,10 @@ class Subject(RemoteObject):
     # the following methods are intended to be invoked remotely
 
     def register(self, name):
-        """register a new Observer (invoked by the Observer)"""
+        """Registers a new Observer (invoked by the Observer)."""
         self.observers.append(name)
         print 'Registered ' + name
+
 
 class SimpleSubject(Subject):
 
@@ -49,15 +61,15 @@ class SimpleSubject(Subject):
     # the following methods are intended to be invoked remotely
         
     def set_state(self, state):
-        """change the state of the Subject"""
+        """Changes the state of the Subject."""
         print 'New state', state
         self.state = state
         self.notify_observers()
 
     def get_state(self):
-        """get the current state of the Subject"""
+        """Gets the current state of the Subject."""
         return self.state
 
-sub = SimpleSubject('bob')
+sub = SimpleSubject('simple_subject')
 sub.requestLoop()
-    
+

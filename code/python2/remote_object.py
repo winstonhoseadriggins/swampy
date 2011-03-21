@@ -16,7 +16,7 @@ import Pyro.util
 import Pyro.naming
 import Pyro.errors
 
-DEFAULT_NS_HOST = 'rocky.olin.edu'
+DEFAULT_NS_HOST = 'acl.olin.edu'
 
 
 class MyThread(threading.Thread):

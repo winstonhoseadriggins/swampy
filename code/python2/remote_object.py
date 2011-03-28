@@ -1,7 +1,7 @@
 """Wrapper for Pyro: Python Remote Objects.
 
 Copyright 2010 Allen B. Downey
-imdb.py:License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 """
 

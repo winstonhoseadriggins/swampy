@@ -1,73 +1,42 @@
-#!/usr/bin/python
+"""This code is for an exercise from
+Think Python: An Introduction to Software Design
 
-from TurtleWorld import *
+Copyright 2010 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
-import os, threading, signal
+This program requires Gui.py, which is part of
+Swampy; you can download it from thinkpython.com/swampy.
 
-class MyThread(threading.Thread):
-    """this is a wrapper for threading.Thread that improves
-    the syntax for creating and starting threads.
-    """
-    def __init__(self, target, *args):
-        threading.Thread.__init__(self, target=target, args=args)
-        self.start()
+"""
 
-class Watcher:
-    """this class solves two problems with multithreaded
-    programs in Python, (1) a signal might be delivered
-    to any thread (which is just a malfeature) and (2) if
-    the thread that gets the signal is waiting, the signal
-    is ignored (which is a bug).
-
-    The watcher is a concurrent process (not thread) that
-    waits for a signal and the process that contains the
-    threads.  See Appendix A of The Little Book of Semaphores.
-    http://greenteapress.com/semaphores/
-
-    I have only tested this on Linux.  I would expect it to
-    work on the Macintosh and not work on Windows.
-    """
-    
-    def __init__(self):
-        """ Creates a child thread, which returns.  The parent
-            thread waits for a KeyboardInterrupt and then kills
-            the child thread.
-        """
-        self.child = os.fork()
-        if self.child == 0:
-            return
-        else:
-            self.watch()
-
-    def watch(self):
-        try:
-            os.wait()
-        except KeyboardInterrupt:
-            # I put the capital B in KeyBoardInterrupt so I can
-            # tell when the Watcher gets the SIGINT
-            print 'KeyBoardInterrupt'
-            self.kill()
-        sys.exit()
-
-    def kill(self):
-        try:
-            os.kill(self.child, signal.SIGKILL)
-        except OSError: pass
+from Gui import Callable
+from World import MyThread
+from TurtleWorld import Turtle, TurtleWorld
 
 
 class Threader(Turtle):
     def __init__(self, world):
-        Turtle.__init__(self, world, delay=0.005)
+        Turtle.__init__(self, world)
+        self.delay = 0.005
         self.set_color('purple')
 
-    def step(self): pass
+    def step():
+        """Threaders don't need no stinkin' step method.
 
+        See http://en.wikipedia.org/wiki/Stinking_badges
+        """
+    
     def moveto(self, x, y):
+        """Teleports to the given coordinates and redraws."""
         self.x = x
         self.y = y
         self.redraw()
 
     def koch(self, n):
+        """Draws a Koch curve with length n.
+
+        See http://en.wikipedia.org/wiki/Koch_snowflake
+        """
         if n<8:
             self.fd(n)
             return
@@ -76,26 +45,26 @@ class Threader(Turtle):
             self.rt(angle)
 
     def snowflake(self):
+        """Draws a Koch snowflake."""
         for i in range(3):
             self.koch(300)
             self.rt(120)
         self.undraw()
-        
 
-class ThreaderWorld(TurtleWorld):
-    def __init__(self):
-        self.watcher = Watcher()
-        TurtleWorld.__init__(self)
-    
-    def quit(self):
-        self.watcher.kill()
 
-    def make_threader(self):
-        t = Threader(self)
-        t.moveto(-150, 90)
-        MyThread(t.snowflake)
+def make_threader(world):
+    """Creates a Threader and makes it draw a snowflake."""
+    t = Threader(world)
+    t.moveto(-150, 90)
 
-world = ThreaderWorld()
-world.bu(LEFT, text='Make Threader', command=world.make_threader)
+    # TODO: modify this so it runs in a new thread
+    MyThread(t.snowflake)
+
+
+world = TurtleWorld()
+world.setup_interactive()
+
+# add a button that calls make_threader
+world.bu(text='Make Threader', command=Callable(make_threader, world))
 world.mainloop()
 

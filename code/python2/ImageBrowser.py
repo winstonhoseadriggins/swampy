@@ -16,6 +16,7 @@ import os, sys
 from Gui import *
 import Image as PIL      # to avoid name conflict with Tkinter
 import ImageTk
+import Tkinter
 
 class ImageBrowser(Gui):
     """An image browser that scans the files in a given directory and
@@ -25,7 +26,7 @@ class ImageBrowser(Gui):
         Gui.__init__(self)
 
         # clicking on the image breaks out of mainloop
-        self.button = self.bu(command=self.quit, relief=FLAT)
+        self.button = self.bu(command=self.quit, relief=Tkinter.FLAT)
 
     def image_loop(self, dirname='.'):
         """loop through the files in (dirname), displaying
@@ -38,8 +39,10 @@ class ImageBrowser(Gui):
                 print file
                 self.mainloop()
             except IOError:
+                # probably not an image file
                 continue
             except:
+                # some other error occurred
                 break
 
     def show_image(self, filename):

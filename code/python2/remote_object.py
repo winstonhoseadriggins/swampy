@@ -229,7 +229,17 @@ class RemoteObject(Pyro.core.ObjBase):
             self.thread.join()
 
 
-def main(script, action='', prefix='', group=None):
+def main(script, action='', prefix='unlikely_prefix', group=None):
+
+    if action == '':
+        print 'To list all remote objects on the name server, run'
+        print 'python remote_object.py list'
+        print
+        print 'To remove objects from the name server, run'
+        print 'python remote_object.py clean PREFIX'
+        print
+        print 'where you replace PREFIX with the name of a remote'
+        print 'object, or the common prefix of several objects.'
 
     if action == 'clear':
         ns = NameServer()

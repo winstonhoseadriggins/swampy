@@ -5,7 +5,8 @@ canvas_demo.py  image_demo.py       pil_demo.py \
 circle_demo.py  menubutton_demo.py  widget_demo.py \
 remote_object.py	MathServer.py 	MathClient.py \
 thread.py	Subject.py	Observer.py	Modifier.py \
-Popup.py	PopupDemo.py	PopupServer.py	PopupClient.py
+Popup.py	PopupDemo.py	PopupServer.py	PopupClient.py \
+Threader.py	Threader_soln.py
 
 DOCS = remote_object.html
 

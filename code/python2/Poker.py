@@ -1,7 +1,9 @@
 #!/usr/bin/python
 
-from Gui import *
-from PokerHand import *
+from Gui import Gui, Transform
+from PokerHand import Deck, PokerHand
+
+import ImageTk
 
 class Table(Gui):
     """A Table displays a green canvas and a control area.
@@ -106,12 +108,12 @@ class Cardset(dict):
         for rank in range(1,14):
             for suit in range(4):
                 filename = '%s/%.2d%s.%s' % (dir, rank, suits[suit], ext)
-                image = PhotoImage(file=filename)
+                image = ImageTk.PhotoImage(file=filename)
                 self[suit,rank] = image
 
         filename = '%s/back01.gif' % (dir)
         try:
-            image = PhotoImage(file=filename)
+            image = ImageTk.PhotoImage(file=filename)
             self['back'] = image
         except:
             pass
@@ -168,6 +170,7 @@ def main(name, cardstyle='tuxedo', *args):
     table.mainloop()
     
 if __name__ == '__main__':
+    import sys
     main(*sys.argv)
 
 

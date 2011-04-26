@@ -1,8 +1,9 @@
-"""
-
-This module contains code from
+"""This module contains code from
 Think Python: an Introduction to Software Design
 Allen B. Downey
+
+Copyright 2010 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 """
 
@@ -10,13 +11,16 @@ from Card import *
 
 class PokerHand(Hand):
     def suit_hist(self):
-        """build a histogram of the suits that appear in the hand"""
+        """Build a histogram of the suits that appear in the hand."""
         self.suits = {}
         for card in self.cards:
             self.suits[card.suit] = self.suits.get(card.suit, 0) + 1
 
     def has_flush(self):
-        """return True if the hand has a flush, False otherwise"""
+        """Returns True if the hand has a flush, False otherwise.
+
+        Note that this works correctly for hands with more than 5 cards.
+        """
         self.suit_hist()
         for val in self.suits.values():
             if val >= 5:
@@ -36,7 +40,4 @@ if __name__ == '__main__':
         print hand
         print hand.has_flush()
         print ''
-
-
-
 

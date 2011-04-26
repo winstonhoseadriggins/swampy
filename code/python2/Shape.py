@@ -1,23 +1,34 @@
-from math import *
+"""Code for use with Think Python by Allen Downey.
 
-class Location:
+Copyright 2010 Allen B. Downey
+Distributed under the GNU General Public License at gnu.org/licenses/gpl.html.
+"""
+
+import math
+
+
+class Location(object):
+    """Represents a point in 2-D space."""
+
     def __init__(self, x=0, y=0):
         self.x = x
         self.y = y
 
     def distance(self, other):
-        "compute the distance between Locations self and other"
+        """Computes the distance from this location to other."""
         dx = self.x - other.x
         dy = self.y - other.y
-        return sqrt(dx*dx + dy*dy)
+        return math.sqrt(dx*dx + dy*dy)
 
     def isLeft(self, other): return self.x < other.x
     def isRight(self, other): return self.x > other.x
     def isAbove(self, other): return self.y > other.y
     def isBelow(self, other): return self.y < other.y
 
-class Shape:
-    "the parent class that all shapes inherit from"
+
+class Shape(object):
+    """The parent class that all shapes inherit from."""
+
 
 class Circle(Shape):
     def __init__(self, center, radius):
@@ -25,9 +36,10 @@ class Circle(Shape):
         self.radius = radius
 
     def contains(self, loc):
-        """return True if Location loc is inside this circle
-        (including the boundary)"""       
+        """Returns True if Location loc is inside this circle
+        (including the boundary)."""       
         return loc.distance(self.center) <= self.radius
+
 
 class Rectangle(Shape):
     def __init__(self, topLeft, botRight):
@@ -43,19 +55,10 @@ class Rectangle(Shape):
         if loc.isBelow(self.botRight): return False
         return True
 
-import Lumpy
-lumpy = Lumpy.Lumpy()
-lumpy.make_reference()
 
-"make some Locations"
-loc1 = Location(0, 10)
-loc2 = Location(10, 0)
+center = Location(100, 200)
+circle = Circle(center, 75)
+loc = Location(150, 150)
 
-"make a list of shapes"
-shape1 = Circle(loc1, 10)
-
-shape2 = Rectangle(loc1, loc2)
-
-lumpy.object_diagram()
-lumpy.class_diagram()
-
+bool = circle.contains(loc) 
+print bool

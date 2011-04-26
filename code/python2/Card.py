@@ -1,15 +1,16 @@
-"""
-
-This module contains code from
+"""This module contains code from
 Think Python: an Introduction to Software Design
 Allen B. Downey
+
+Copyright 2010 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 """
 
 import random
 
 class Card(object):
-    """represents a standard playing card."""
+    """Represents a standard playing card."""
 
     suit_names = ["Clubs", "Diamonds", "Hearts", "Spades"]
     rank_names = [None, "Ace", "2", "3", "4", "5", "6", "7", 
@@ -30,7 +31,7 @@ class Card(object):
 
 
 class Deck(object):
-    """represents a deck of cards"""
+    """Represents a deck of cards."""
     
     def __init__(self):
         self.cards = []
@@ -46,30 +47,34 @@ class Deck(object):
         return '\n'.join(res)
 
     def add_card(self, card):
-        """add a card to the deck"""
+        """Adds a card to the deck."""
         self.cards.append(card)
 
+    def remove_card(self, card):
+        """Removes a card from the deck."""
+        self.cards.remove(card)
+
     def pop_card(self, i=-1):
-        """remove and return a card from the deck.
+        """Removes and returns a card from the deck.
         By default, pop the last card."""
         return self.cards.pop(i)
 
     def shuffle(self):
-        """shuffle the cards in this deck"""
+        """Shuffles the cards in this deck."""
         random.shuffle(self.cards)
 
     def sort(self):
-        """sort the cards in ascending order"""
+        """Sort the cards in ascending order."""
         self.cards.sort()
 
     def move_cards(self, hand, num):
-        """move the given number of cards from the deck into the Hand"""
+        """Moves the given number of cards from the deck into the Hand."""
         for i in range(num):
             hand.add_card(self.pop_card())
 
 
 class Hand(Deck):
-    """represents a hand of playing cards"""
+    """Represents a hand of playing cards."""
     
     def __init__(self, label=''):
         self.label = label
@@ -77,7 +82,7 @@ class Hand(Deck):
 
 
 def find_defining_class(obj, meth_name):
-    """find and return the class object that will provide 
+    """Finds and returns the class object that will provide 
     the definition of meth_name (as a string) if it is
     invoked on obj.
     """

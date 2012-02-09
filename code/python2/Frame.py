@@ -135,15 +135,16 @@ class Vertex:
 
 
 def shortest_path(start, frames):
-    # for a given list of frames and a starting frame,
-    # find the shortest path of transforms from the
-    # starting frame to all other frames.
-    # The 'distance' is the number of inverse transformations
-    # that must be calculated.
-    # The result is a dictionary of vertices, where
-    # each vertex is labeled with the frame it corresponds
-    # to, the distance from the starting frame, and the prev
-    # frame along the path from start.
+    """For a given list of frames and a starting frame,
+    find the shortest path of transforms from the
+    starting frame to all other frames.
+    The 'distance' is the number of inverse transformations
+    that must be calculated.
+    The result is a dictionary of vertices, where
+    each vertex is labeled with the frame it corresponds
+    to, the distance from the starting frame, and the prev
+    frame along the path from start. """
+
     map = dict([(f, Vertex(f)) for f in frames])
     
     length = {}

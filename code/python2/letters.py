@@ -6,10 +6,32 @@ Allen B. Downey
 
 """
 
-from polygon import *
+from TurtleWorld import *
+from polygon import circle, arc
 
 # LEVEL 0 PRIMITIVES are provided by World.py.
 # They include fd, bk, lt, rt, pu and pd
+
+# the following condition checks whether we are
+# running as a script, in which case run the test code,
+# or being imported, in which case don't.
+
+if __name__ == '__main__':
+    world = TurtleWorld()    
+
+    bob = Turtle()
+    bob.delay = 0.001
+
+    # draw a circle centered on the origin
+    radius = 100
+    pu(bob)
+    fd(bob, radius)
+    lt(bob)
+    pd(bob)
+    circle(bob, radius)
+
+    wait_for_user()
+
 
 # LEVEL 1 PRIMITIVES are simple combinations of Level 0 primitives.
 # They have no pre- or post-conditions.
@@ -260,7 +282,6 @@ def draw_(t, n):
     skip(t, n)
 
 if __name__ == '__main__':
-    from TurtleWorld import *
     world = TurtleWorld()
 
     # create and position the turtle

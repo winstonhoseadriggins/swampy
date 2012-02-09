@@ -6,6 +6,7 @@ Allen B. Downey
 
 """
 
+import math
 from TurtleWorld import *
 
 def draw_pie(t, n, r):
@@ -47,6 +48,7 @@ def isosceles(t, r, theta):
 # create the world and bob
 world = TurtleWorld()
 bob = Turtle()
+bob.delay = 0
 pu(bob)
 bk(bob, 130)
 pd(bob)
@@ -56,6 +58,7 @@ size = 40
 draw_pie(bob, 5, size)
 draw_pie(bob, 6, size)
 draw_pie(bob, 7, size)
+draw_pie(bob, 8, size)
 die(bob)
 
 # dump the contents of the campus to the file canvas.eps

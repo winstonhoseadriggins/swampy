@@ -10,16 +10,16 @@ from TurtleWorld import *
 import math
 
 def square(t, length):
-    """Use the Turtle (t) to draw a square with sides of
-    the given length.  Returns the Turtle to the starting
-    position and location.
+    """Draw a square with sides of the given length.
+
+    Returns the Turtle to the starting position and location.
     """
     for i in range(4):
         fd(t, length)
         lt(t)
 
 def polyline(t, n, length, angle):
-    """Draw n line segments with the given length and
+    """Draws n line segments with the given length and
     angle (in degrees) between them.
     """
     for i in range(n):
@@ -27,10 +27,22 @@ def polyline(t, n, length, angle):
         lt(t, angle)
 
 def polygon(t, n, length):
+    """Draws a polygon with n sides.
+
+    t: Turtle
+    n: number of sides
+    length: length of each side.
+    """
     angle = 360.0/n
     polyline(t, n, length, angle)
 
 def arc(t, r, angle):
+    """Draws an arc with the given radius and angle.
+
+    t: Turtle
+    r: radius
+    angle: angle subtended by the arc, in degrees
+    """
     arc_length = 2 * math.pi * r * abs(angle) / 360
     n = int(arc_length / 4) + 1
     step_length = arc_length / n
@@ -43,6 +55,8 @@ def arc(t, r, angle):
     rt(t, step_angle/2)
 
 def circle(t, r):
+    """Draws a circle with the given radius.
+    """
     arc(t, r, 360)
 
 # the following condition checks whether we are

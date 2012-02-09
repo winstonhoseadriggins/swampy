@@ -7,7 +7,8 @@ remote_object.py	MathServer.py 	MathClient.py \
 thread.py	Subject.py	Observer.py	Modifier.py \
 Popup.py	PopupDemo.py	PopupServer.py	PopupClient.py \
 Threader.py	Threader_soln.py	Card.py	PokerHand.py \
-Shape.py
+Shape.py	Poker.py	PokerExam.py \
+flower.py	letters.py	pie.py
 
 DOCS = remote_object.html
 

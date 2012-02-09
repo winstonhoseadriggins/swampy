@@ -27,6 +27,7 @@ class PokerHand(Hand):
                 return True
         return False
 
+
 if __name__ == '__main__':
     # make a deck
     deck = Deck()

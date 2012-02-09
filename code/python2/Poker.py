@@ -1,20 +1,28 @@
-#!/usr/bin/python
+"""This module contains code from
+Think Python: an Introduction to Software Design
+Allen B. Downey
 
-from Gui import Gui, Transform
-from PokerHand import Deck, PokerHand
+Copyright 2010 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
+This program requires Gui.py, which is part of
+Swampy; you can download it from thinkpython.com/swampy.
+
+"""
+
+from Tkinter import NW
+import Gui
+import PokerHand
 import ImageTk
 
-class Table(Gui):
-    """A Table displays a green canvas and a control area.
-    By default, all tables share a common deck."""
 
-    def __init__(self, deck=Deck()):
-        Gui.__init__(self)
+class Table(Gui.Gui):
+    """A Table displays a green canvas and a control area."""
+
+    def __init__(self):
+        Gui.Gui.__init__(self)
         self.cardset = None            # the images used to display cards
-        self.deck = deck               # the deck
-        self.views = {}                # mapping from Hands to HandViews
-        self.transforms = []
+        self.views = {}                # map from Hands to HandViews
         self.setup()
 
     def setup(self):
@@ -50,13 +58,13 @@ class Table(Gui):
         if len(self.views) != 0:
             self.clear()
 
-        # make a new deck and shuffle
-        deck = Deck()
+        # shuffle the deck
+        deck = PokerHand.Deck()
         deck.shuffle()
 
         # deal the cards and display each Hand
         for i in range(nhands):
-            hand = PokerHand()
+            hand = PokerHand.PokerHand()
             deck.move_cards(hand, ncards)
 
             # classify the hand.
@@ -76,7 +84,7 @@ class Table(Gui):
         self.views = {}
 
 
-class TableTransform(Transform):
+class TableTransform(Gui.Transform):
     """transform coordinates so that the x-axis is in units of card widths
     and the y-axis is in units of card heights.  The origin is in the
     upper left corner, and the y-axis points down."""
@@ -92,10 +100,10 @@ class TableTransform(Transform):
 
 
 class Cardset(dict):
-    """a cardset is a dictionary that maps a tuple (suit,rank) onto
+    """A cardset is a dictionary that maps a tuple (suit,rank) onto
     an Image that depicts the card.  In addition, the dictionary
     contains a key 'back' that maps to an Image that depicts the
-    back of the card"""
+    back of the card."""
 
     def __init__(self, dir=None, ext='gif'):
         """create a cardset, reading cards from the given directory"""
@@ -127,7 +135,7 @@ class Cardset(dict):
         return self[card.suit, card.rank]
 
 class HandView:
-    """a HandView object represents a Hand being displayed on a Table"""
+    """A HandView object represents a Hand being displayed on a Table"""
     
     def __init__(self, hand, table):
         self.hand = hand

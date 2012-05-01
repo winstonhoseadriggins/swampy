@@ -4,7 +4,7 @@
 
 import math, sys
 from random import randint
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 
 class Missed(Exception):
     """this is the exception raised when a turtle tries to tag

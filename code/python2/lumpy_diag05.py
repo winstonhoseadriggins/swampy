@@ -8,7 +8,7 @@ Distributed under the GNU General Public License at gnu.org/licenses/gpl.html.
 
 """
 
-from TurtleWorld import Turtle
+from swampy.TurtleWorld import Turtle
 import Lumpy
 
 # create a Lumpy object and capture reference state

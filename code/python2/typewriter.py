@@ -47,7 +47,7 @@ def keypress(event):
     func(bob, size)
     skip(bob, size/2)
 
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 world = TurtleWorld()
 
 # create and position the turtle

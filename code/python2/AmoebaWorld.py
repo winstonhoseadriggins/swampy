@@ -1,4 +1,4 @@
-from World import *
+from swampy.World import *
 
 class AmoebaWorld(World):
     """AmoebaWorld is a microscope slide, with hash marks, where

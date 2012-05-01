@@ -7,7 +7,7 @@ Copyright 2010 Allen B. Downey
 Distributed under the GNU General Public License at gnu.org/licenses/gpl.html.
 """
 
-from World import World
+from swampy.World import World
 
 class Point:
     """Represents a 2-D point."""

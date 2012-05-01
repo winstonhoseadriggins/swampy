@@ -9,7 +9,7 @@ Swampy; you can download it from thinkpython.com/swampy.
 
 """
 
-from Gui import *
+from swampy.Gui import *
 
 g = Gui()
 photo = PhotoImage(file='danger.gif')

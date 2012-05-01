@@ -9,7 +9,7 @@ Swampy; you can download it from thinkpython.com/swampy.
 
 """
 
-from Gui import *
+from swampy.Gui import *
 
 def figure1():
     print 'Figure 17.3 a'

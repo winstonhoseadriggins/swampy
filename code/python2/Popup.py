@@ -6,7 +6,7 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 """
 import sys
 
-from Gui import Gui
+from swampy.Gui import Gui
 
 class Popup(Gui):
     """Creates a top-level window with a message."""

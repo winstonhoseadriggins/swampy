@@ -10,7 +10,7 @@ Allen B. Downey
 
 """
 
-from World import *
+from swampy.World import *
 from color_list import read_colors
 
 def make_grid(canvas, rgbs):

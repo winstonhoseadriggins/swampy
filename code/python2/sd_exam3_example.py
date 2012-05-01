@@ -1,4 +1,4 @@
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 
 class MyWorld(TurtleWorld):
     def setup(self):

@@ -1,4 +1,4 @@
-from Gui import *
+from swampy.Gui import *
 
 width, height = 500, 500
 

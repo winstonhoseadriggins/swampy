@@ -1,5 +1,5 @@
 # read the code in AmoebaWorld.py
-from World import *
+from swampy.World import *
 
 # read the math module and the time module
 from math import *

@@ -1,4 +1,4 @@
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 from math import *
 
 def ntri(t, n, r):

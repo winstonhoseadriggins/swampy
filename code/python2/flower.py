@@ -6,7 +6,7 @@ Allen B. Downey
 
 """
 
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 from polygon import *
 
 def petal(t, r, angle):

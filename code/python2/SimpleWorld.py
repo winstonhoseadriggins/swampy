@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 from Tkinter import *
-from Gui import *
+from swampy.Gui import *
 import os
 
 class Hello(Gui):

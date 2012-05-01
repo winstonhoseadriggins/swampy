@@ -3,7 +3,7 @@
 # import everything we need...
 from math import *
 from random import *
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 from polygon import *
  
 # a Wanderer is a kind of turtle

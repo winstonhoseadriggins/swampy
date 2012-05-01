@@ -10,7 +10,7 @@ Distributed under the GNU General Public License at gnu.org/licenses/gpl.html.
 import math
 import random
 
-from TurtleWorld import TurtleWorld, Turtle
+from swampy.TurtleWorld import TurtleWorld, Turtle
 import color_list
 
 

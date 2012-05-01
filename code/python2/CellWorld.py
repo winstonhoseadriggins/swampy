@@ -1,5 +1,5 @@
 
-from World import *
+from swampy.World import *
 
 class CellWorld(World):
     """a CellWorld contains cells that represent regions and animals

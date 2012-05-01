@@ -1,5 +1,5 @@
 
-from World import *
+from swampy.World import *
 from RemoteObject import *
 
 class Chatter(Gui):

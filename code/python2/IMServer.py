@@ -1,4 +1,4 @@
-from World import *
+from swampy.World import *
 from RemoteObject import *
 from threading import *
 import os

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from World import *
+from swampy.World import *
 
 class TreeWorld(Gui):
 

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 
 # create a Lumpy object and capture reference state
 import Lumpy

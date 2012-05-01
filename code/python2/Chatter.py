@@ -1,5 +1,5 @@
 import os
-from World import *
+from swampy.World import *
 from RemoteObject import *
 from random import randrange
 

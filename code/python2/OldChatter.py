@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 from Tkinter import *
-from Gui import *
+from swampy.Gui import *
 import sys
 import random
 import Pyro.core

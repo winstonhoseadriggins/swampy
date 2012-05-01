@@ -9,9 +9,9 @@ Swampy; you can download it from thinkpython.com/swampy.
 
 """
 
-from Gui import Callable
-from World import MyThread
-from TurtleWorld import Turtle, TurtleWorld
+from swampy.Gui import Callable
+from swampy.World import MyThread
+from swampy.TurtleWorld import Turtle, TurtleWorld
 
 
 class Threader(Turtle):

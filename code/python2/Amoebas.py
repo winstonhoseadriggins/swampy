@@ -1,4 +1,4 @@
-from World import *
+from swampy.World import *
 from math import *
 import random
 import time

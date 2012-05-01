@@ -10,7 +10,7 @@
 # leave.
 # up, leave, enter.
 
-from Gui import *
+from swampy.Gui import *
 
 class Canvas(Gui):
     def __init__ (self):

@@ -55,7 +55,7 @@ d2 = invert_dict(d)
 print d2
 
 
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 
 import math
 

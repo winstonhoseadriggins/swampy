@@ -6,7 +6,7 @@ Allen B. Downey
 
 """
 
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 from polygon import circle, arc
 
 # LEVEL 0 PRIMITIVES are provided by World.py.

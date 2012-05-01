@@ -5,7 +5,7 @@ from math import *
 from time import sleep
 from random import *
 
-from World import *
+from swampy.World import *
 
 def run_in_thread(function, *args):
     thread = Thread(target=function, args=args)

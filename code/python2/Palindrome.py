@@ -1,4 +1,4 @@
-from World import *
+from swampy.World import *
 from filters import *
 
 class Palindrome(Gui):

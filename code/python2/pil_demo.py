@@ -10,7 +10,7 @@ Swampy; you can download it from thinkpython.com/swampy.
 """
 
 import os, sys
-from Gui import *
+from swampy.Gui import *
 import Image as PIL      # to avoid name conflict with Tkinter
 import ImageTk
 

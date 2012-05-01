@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from Gui import *
+from swampy.Gui import *
 import string
 from time import sleep
 

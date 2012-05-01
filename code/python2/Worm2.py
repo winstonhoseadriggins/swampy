@@ -1,4 +1,4 @@
-from Gui import *
+from swampy.Gui import *
 from RemoteObject import *
 #import threading
 

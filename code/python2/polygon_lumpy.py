@@ -2,7 +2,7 @@
 # Software Design
 # Allen Downey
 
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 
 def polyline(t, n, length, angle):
     """draw n lines with the given length and

@@ -1,4 +1,4 @@
-from Gui import *
+from swampy.Gui import *
 
 def callback(event):
     print event

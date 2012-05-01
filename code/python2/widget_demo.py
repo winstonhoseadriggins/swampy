@@ -14,7 +14,7 @@ The documentation for the widgets is at
 http://www.pythonware.com/library/tkinter/introduction/
 """
 
-from Gui import *
+from swampy.Gui import *
 
 # create the Gui: the debug flag makes the frames visible
 g = Gui(debug=False)

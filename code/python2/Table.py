@@ -1,5 +1,5 @@
 import TkTable
-from World import *
+from swampy.World import *
 
 gui = Gui()
 

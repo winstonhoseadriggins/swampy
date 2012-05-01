@@ -1,6 +1,6 @@
 import time, random
 from math import *
-from World import *
+from swampy.World import *
 
 def random_coordinate(limit=1):
     # choose a random number between -limit and limit

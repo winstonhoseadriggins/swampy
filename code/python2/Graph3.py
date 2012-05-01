@@ -1,7 +1,7 @@
 import string
 from math import sqrt
 from random import *
-from Gui import *
+from swampy.Gui import *
 
 class GraphCanvas(GuiCanvas):
     def drawVertex(self, v, r=0.4):

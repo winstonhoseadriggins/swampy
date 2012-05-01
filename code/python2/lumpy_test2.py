@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 
 import Lumpy
 lumpy = Lumpy.Lumpy()

@@ -1,4 +1,4 @@
-from Gui import *
+from swampy.Gui import *
 from sd_hw03_soln import *
 
 class Rotate(Gui):

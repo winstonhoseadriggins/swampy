@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from Gui import *
+from swampy.Gui import *
 from time import sleep
 
 class Table(Gui):

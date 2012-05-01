@@ -1,5 +1,5 @@
 
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 
 class CokeWorld(World):
 

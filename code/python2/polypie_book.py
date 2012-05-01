@@ -1,7 +1,7 @@
 # Solutions to exercises from "How to Think..."
 # Allen B. Downey
 
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 from math import *
 
 def polypies(t, ns, r):

@@ -1,4 +1,4 @@
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 import random
 
 world = TurtleWorld()

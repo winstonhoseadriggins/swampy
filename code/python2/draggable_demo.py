@@ -9,7 +9,7 @@ Swampy; you can download it from thinkpython.com/swampy.
 
 """
 
-from Gui import *
+from swampy.Gui import *
 
 class Draggable(Item):
     """a Canvas Item with bindings for dragging and dropping.

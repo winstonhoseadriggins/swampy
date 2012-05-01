@@ -6,7 +6,7 @@ Distributed under the GNU General Public License at gnu.org/licenses/gpl.html.
 """
 
 # import everything from TurtleWorld.py
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 
 # and everything from the random module
 from random import *

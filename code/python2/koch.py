@@ -6,7 +6,7 @@ Allen B. Downey
 
 """
 
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 
 world = TurtleWorld()
 bob = Turtle()

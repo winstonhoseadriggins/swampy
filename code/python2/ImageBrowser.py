@@ -13,7 +13,7 @@ http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/521918
 """
 
 import os, sys
-from Gui import *
+from swampy.Gui import *
 import Image as PIL      # to avoid name conflict with Tkinter
 import ImageTk
 import Tkinter

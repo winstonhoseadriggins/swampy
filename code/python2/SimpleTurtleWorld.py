@@ -1,4 +1,4 @@
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 
 class SimpleTurtleWorld(TurtleWorld):
     """an environment for Turtles and TurtleControls.

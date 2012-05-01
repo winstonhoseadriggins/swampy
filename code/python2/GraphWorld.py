@@ -1,7 +1,7 @@
 import string
 import random
 import math
-from Gui import *
+from swampy.Gui import *
 from Graph import *
 
 class GraphCanvas(GuiCanvas):

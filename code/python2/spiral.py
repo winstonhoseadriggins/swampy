@@ -6,7 +6,7 @@ Allen B. Downey
 
 """
 
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 
 def draw_spiral(t, n, length=3, a=0.1, b=0.0002):
     """Draws an Archimedian spiral starting at the origin.

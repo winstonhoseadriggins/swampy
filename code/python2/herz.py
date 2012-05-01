@@ -7,7 +7,7 @@ Dafür gehen erst beide SChildkröten getrennte Wege, nach links oben und rechts
 """
 
 # We need all functions and classes from TurtleWorld
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 
 # Also we need the number pi
 import math

@@ -19,27 +19,32 @@ def pipe(cmd):
     return res, stat
 
 
-def sedall(pattern='*.py', sed_cmd='s/^from World/from swampy.World/'):
+def sedall(pattern, sed_cmd):
     """Runs sed on each file that matches the pattern.
 
     pattern: glob pattern for filenames
     sed_cmd: string sed cmd to apply to each file
     """
-    for file in glob(pattern):
-        print file
-        cmd = "sed '%s' %s > temp" % (sed_cmd, file)
+    for filename in glob(pattern):
+        if filename == 'sedall.py':
+            continue
+
+        cmd = "sed '%s' %s > temp" % (sed_cmd, filename)
         print cmd
         res, stat = pipe(cmd)
 
         if stat == None:
-            cmd = "mv temp %s" % file
+            cmd = "mv temp %s" % filename
             res, stat = pipe(cmd)
 
     return stat
 
 
-def main(name, pattern='*.tex', sed_cmd='s/Spring 2004/Fall 2004/'):
-    sedall(pattern, sed_cmd)
+def main(name, pattern='*.py'):
+    for module in ['TurtleWorld']:
+        sed_cmd = 's/^from %s/from swampy.%s/' % (module, module)
+        print sed_cmd
+        sedall(pattern, sed_cmd)
 
 
 if __name__ == '__main__':

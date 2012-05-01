@@ -9,7 +9,7 @@ Swampy; you can download it from thinkpython.com/swampy.
 
 """
 
-from World import *
+from swampy.World import *
 
 world = World()
 canvas = world.ca(width=500, height=500, background='white')

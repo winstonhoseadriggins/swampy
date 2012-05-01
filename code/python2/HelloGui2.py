@@ -1,4 +1,4 @@
-from Gui import *
+from swampy.Gui import *
 
 class DraggableItem(Item):
     """DraggableItem extends Item with basic drag-and-drop capability"""

@@ -1,5 +1,5 @@
 import os
-from World import *
+from swampy.World import *
 
 class Hello(Gui):
     def __init__(self, debug=False):

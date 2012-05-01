@@ -7,7 +7,7 @@ Allen B. Downey
 """
 
 import math
-from TurtleWorld import *
+from swampy.TurtleWorld import *
 
 def draw_pie(t, n, r):
     """use Turtle (t) to draw a polypie and then move forward.

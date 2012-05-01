@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 from __future__ import generators
-from World import *
+from swampy.World import *
 from random import *
 import math
 import sys

@@ -1,4 +1,4 @@
-from Gui import Gui
+from swampy.Gui import Gui
 
 import Lumpy
 lumpy = Lumpy.Lumpy()

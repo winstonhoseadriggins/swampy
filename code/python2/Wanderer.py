@@ -5,7 +5,7 @@ Copyright 2010 Allen B. Downey
 Distributed under the GNU General Public License at gnu.org/licenses/gpl.html.
 """
 
-# import everything we need from World.py...
+# import everything from TurtleWorld.py
 from TurtleWorld import *
 
 # and everything from the random module
@@ -28,11 +28,14 @@ class Wanderer(Turtle):
 
         # then add the other attributes that make it a Wanderer
         self.delay = 0
+
         # speed is the distance the Wanderer moves per step
         self.speed = speed
+
         # clumsiness determines the ability of the Wanderer to
         # track a straight line
         self.clumsiness = clumsiness
+
         # Wanderers start out facing in a random direction
         self.rt(randint(0,360))
 

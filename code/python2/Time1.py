@@ -57,7 +57,11 @@ def valid_time(time):
 
 def main():
     # if a movie starts at noon...
-    noon_time = int_to_time(12 * 60 * 60)
+    noon_time = Time()
+    noon_time.hour = 12
+    noon_time.minute = 0
+    noon_time.second = 0
+
     print 'Starts at',
     print_time(noon_time)
 

@@ -8,7 +8,8 @@ thread.py	Subject.py	Observer.py	Modifier.py \
 Popup.py	PopupDemo.py	PopupServer.py	PopupClient.py \
 Threader.py	Threader_soln.py	Card.py	PokerHand.py \
 Shape.py	Poker.py	PokerExam.py \
-flower.py	letters.py	typewriter.py   pie.py
+flower.py	letters.py	typewriter.py   pie.py \
+Time1.py	Time1_soln.py
 
 DOCS = remote_object.html
 

@@ -1,41 +1,27 @@
-#!/usr/bin/python
+"""
+
+Code example from Think Python, by Allen B. Downey.
+Available from http://thinkpython.com
+
+Copyright 2012 Allen B. Downey.
+Distributed under the GNU General Public License at gnu.org/licenses/gpl.html.
+
+"""
 
 class Point:
-  def __init__(self, x=0, y=0):
-    self.x = x
-    self.y = y
+    """Represents a point in 2-D space."""
 
-  def __str__(self):
-    return '(' + str(self.x) + ', ' + str(self.y) + ')'
+def print_point(p):
+    print '(%g, %g)' % (p.x, p.y)
 
-  def __add__(self, other):
-    return Point(self.x + other.x, self.y + other.y)
 
-  def __sub__(self, other):
-    return Point(self.x - other.x, self.y - other.y)
+def main():
+    blank = Point()
+    blank.x = 3
+    blank.y = 4
+    print_point(blank)
 
-  def __mul__(self, other):
-    return self.x * other.x + self.y * other.y
 
-  def __rmul__(self, other):
-    return Point(other * self.x, other * self.y)
+if __name__ == '__main__':
+    main()
 
-  def reverse(self):
-    self.x, self.y = self.y, self.x
-
-  def frontAndBack(front):
-    from copy import copy
-    back = copy(front)
-    back.reverse()
-    print str(front) + str(back)
-
-p = Point (1, 2)
-print p
-p.reverse()
-print p
-
-def print_attributes(obj):
-    for attr, val in obj.__dict__.items():
-        print attr, getattr(obj, attr)
-
-print_attributes(p)

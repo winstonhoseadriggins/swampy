@@ -1,17 +1,17 @@
-"""
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
 
-Solution to the numerical approximation of pi exercise.
-Think Python: An Introduction to Software Design
-Allen B. Downey
-
-Algorithm due to Srinivasa Ramanujan, from 
-http://en.wikipedia.org/wiki/Pi
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 """
 
 import math
 
+
 def factorial(n):
+    """Computes factorial of n."""
     if n == 0:
         return 1
     else:
@@ -19,7 +19,13 @@ def factorial(n):
         result = n * recurse
         return result
 
+
 def estimate_pi():
+    """Computes an estimate of pi.
+
+    Algorithm due to Srinivasa Ramanujan, from 
+    http://en.wikipedia.org/wiki/Pi
+    """
     total = 0
     k = 0
     factor = 2 * math.sqrt(2) / 9801

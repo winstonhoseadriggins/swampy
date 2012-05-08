@@ -1,49 +1,67 @@
-"""
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
 
-Solution to an exercise from
-Think Python: An Introduction to Software Design
-Allen B. Downey
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 """
 
 import math
-from swampy.TurtleWorld import *
+
+try:
+    # see if Swampy is installed as a package
+    from swampy.TurtleWorld import *
+except ImportError:
+    # otherwise see if the modules are on the PYTHONPATH
+    from TurtleWorld import *
+
 
 def draw_pie(t, n, r):
-    """use Turtle (t) to draw a polypie and then move forward.
-    (n) is the number of segments in the pie.
-    (r) is the spoke length.
+    """Draws a pie, then moves into position to the right.
+
+    t: Turtle
+    n: number of segments
+    r: length of the radial spokes
     """
     polypie(t, n, r)
     pu(t)
     fd(t, r*2 + 10)
     pd(t)
+
     
 def polypie(t, n, r):
-    """use Turtle (t) to draw a pie with (n) triangular slices with
-    spoke length (r).  (n) must be greater than 2.
-    (t) ends at the starting position, orientation.
+    """Draws a pie divided into radial segments.
+
+    t: Turtle
+    n: number of segments
+    r: length of the radial spokes
     """
-    theta = 360.0 / n
+    angle = 360.0 / n
     for i in range(n):
-        isosceles(t, r, theta/2)
-        lt(t, theta)
+        isosceles(t, r, angle/2)
+        lt(t, angle)
 
-def isosceles(t, r, theta):
-    """use Turtle (t) to draw an isosceles triangle with leg length
-    (r) and peak angle (theta) in degrees.  (t) starts and ends
-    at the peak, facing the middle of the base.
-    (t) ends at the starting position, orientation.
+
+def isosceles(t, r, angle):
+    """Draws an icosceles triangle.
+
+    The turtle starts and ends at the peak, facing the middle of the base.
+
+    t: Turtle
+    r: length of the equal legs
+    angle: peak angle in degrees
     """
-    y = r * math.sin(theta*math.pi/180)
+    y = r * math.sin(angle * math.pi / 180)
 
-    rt(t, theta)
+    rt(t, angle)
     fd(t, r)
-    lt(t, 90+theta)
+    lt(t, 90+angle)
     fd(t, 2*y)
-    lt(t, 90+theta)
+    lt(t, 90+angle)
     fd(t, r)
-    lt(t, 180-theta)
+    lt(t, 180-angle)
+
 
 # create the world and bob
 world = TurtleWorld()

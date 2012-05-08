@@ -1,16 +1,24 @@
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
+
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
 """
 
-Code from Chapter 4 
-Think Python: An Introduction to Software Design
-Allen B. Downey
-
-"""
-
-from swampy.TurtleWorld import *
 import math
 
+try:
+    # see if Swampy is installed as a package
+    from swampy.TurtleWorld import *
+except ImportError:
+    # otherwise see if the modules are on the PYTHONPATH
+    from TurtleWorld import *
+
+
 def square(t, length):
-    """Draw a square with sides of the given length.
+    """Draws a square with sides of the given length.
 
     Returns the Turtle to the starting position and location.
     """
@@ -18,13 +26,19 @@ def square(t, length):
         fd(t, length)
         lt(t)
 
+
 def polyline(t, n, length, angle):
-    """Draws n line segments with the given length and
-    angle (in degrees) between them.
+    """Draws n line segments.
+
+    t: Turtle object
+    n: number of line segments
+    length: length of each segment
+    angle: degrees between segments
     """
     for i in range(n):
         fd(t, length)
         lt(t, angle)
+
 
 def polygon(t, n, length):
     """Draws a polygon with n sides.
@@ -35,6 +49,7 @@ def polygon(t, n, length):
     """
     angle = 360.0/n
     polyline(t, n, length, angle)
+
 
 def arc(t, r, angle):
     """Draws an arc with the given radius and angle.
@@ -48,16 +63,21 @@ def arc(t, r, angle):
     step_length = arc_length / n
     step_angle = float(angle) / n
 
-    # making a slight left turn before the polyline reduces
+    # making a slight left turn before starting reduces
     # the error caused by the linear approximation of the arc
     lt(t, step_angle/2)
     polyline(t, n, step_length, step_angle)
     rt(t, step_angle/2)
 
+
 def circle(t, r):
     """Draws a circle with the given radius.
+
+    t: Turtle
+    r: radius
     """
     arc(t, r, 360)
+
 
 # the following condition checks whether we are
 # running as a script, in which case run the test code,

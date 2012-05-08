@@ -1,17 +1,24 @@
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
+
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
 """
 
-This module is part of an exercise for
-Think Python: an Introduction to Software Design
-Allen B. Downey
-
-"""
-
-from swampy.TurtleWorld import *
 from random import randint
 
+try:
+    # see if Swampy is installed as a package
+    from swampy.TurtleWorld import *
+except ImportError:
+    # otherwise see if the modules are on the PYTHONPATH
+    from TurtleWorld import *
+
+
 class Wobbler(Turtle):
-    """a Wobbler is a kind of Turtle with attributes for speed and
-    clumsiness."""
+    """Represents a Turtle with attributes for speed and clumsiness."""
 
     def __init__(self, world, speed=1, clumsiness=60, color='red'):
         Turtle.__init__(self, world)
@@ -26,27 +33,33 @@ class Wobbler(Turtle):
         self.bk(150)
 
     def step(self):
-        """step is invoked by TurtleWorld on every Wobbler, once
-        per time step."""
-        
+        """Performs one step.
+
+        Invoked by TurtleWorld on every Wobbler, once per time step.
+        """
         self.steer()
         self.wobble()
         self.move()
 
     def move(self):
-        """move forward in proportion to self.speed"""
+        """Moves forward in proportion to self.speed."""
         self.fd(self.speed)
 
     def wobble(self):
-        """make a random turn in proportion to self.clumsiness"""
+        """Makes a random turn in proportion to self.clumsiness."""
         dir = randint(0,self.clumsiness) - randint(0,self.clumsiness)
         self.rt(dir)
 
     def steer(self):
-        """steer the Wobbler in the general direction it should go.
+        """Steers the Wobbler in the general direction it should go.
+
         Postcondition: the Wobbler's heading may be changed, but
-        its position may not."""
+        its position may not.
+
+        This method should be overridden by child classes.
+        """
         self.rt(10)
+
 
 def make_world(constructor):
 
@@ -63,6 +76,7 @@ def make_world(constructor):
         i += 0.5
 
     return world
+
 
 if __name__ == '__main__':
     world = make_world(Wobbler)

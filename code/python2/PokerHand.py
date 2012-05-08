@@ -1,24 +1,29 @@
 """This module contains code from
-Think Python: an Introduction to Software Design
-Allen B. Downey
+Think Python by Allen B. Downey
+http://thinkpython.com
 
-Copyright 2010 Allen B. Downey
+Copyright 2012 Allen B. Downey
 License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 """
 
 from Card import *
 
+
 class PokerHand(Hand):
+
     def suit_hist(self):
-        """Build a histogram of the suits that appear in the hand."""
+        """Builds a histogram of the suits that appear in the hand.
+
+        Stores the result in attribute suits.
+        """
         self.suits = {}
         for card in self.cards:
             self.suits[card.suit] = self.suits.get(card.suit, 0) + 1
 
     def has_flush(self):
         """Returns True if the hand has a flush, False otherwise.
-
+      
         Note that this works correctly for hands with more than 5 cards.
         """
         self.suit_hist()

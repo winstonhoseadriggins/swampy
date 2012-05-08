@@ -5,11 +5,17 @@ Copyright 2010 Allen B. Downey
 Distributed under the GNU General Public License at gnu.org/licenses/gpl.html.
 """
 
-# import everything from TurtleWorld.py
-from swampy.TurtleWorld import *
-
-# and everything from the random module
+# import everything from the random module
 from random import *
+
+# import everything from TurtleWorld
+try:
+    # see if Swampy is installed as a package
+    from swampy.TurtleWorld import *
+except ImportError:
+    # otherwise see if the modules are on the PYTHONPATH
+    from TurtleWorld import *
+
 
 # a Wanderer is a kind of turtle
 class Wanderer(Turtle):

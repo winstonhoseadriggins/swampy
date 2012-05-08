@@ -1,29 +1,46 @@
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
+
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
 """
 
-Solution to Exercise x.x
-Think Python: An Introduction to Software Design
-Allen B. Downey
+try:
+    # see if Swampy is installed as a package
+    from swampy.TurtleWorld import *
+except ImportError:
+    # otherwise see if the modules are on the PYTHONPATH
+    from TurtleWorld import *
 
-"""
-
-from swampy.TurtleWorld import *
 from polygon import *
 
+
 def petal(t, r, angle):
-    """Use the Turtle (t) to draw a petal using two arcs
-    with the radius (r) and angle.
+    """Draws a petal using two arcs.
+
+    t: Turtle
+    r: radius of the arcs
+    angle: angle (degrees) that subtends the arcs
     """
     for i in range(2):
         arc(t, r, angle)
         lt(t, 180-angle)
 
+
 def flower(t, n, r, angle):
-    """Use the Turtle (t) to draw a flower with (n) petals,
-    each with the radius (r) and angle.
+    """Draws a flower with n petals.
+
+    t: Turtle
+    n: number of petals
+    r: radius of the arcs
+    angle: angle (degrees) that subtends the arcs
     """
     for i in range(n):
         petal(t, r, angle)
         lt(t, 360.0/n)
+
 
 def move(t, length):
     """Move Turtle (t) forward (length) units without leaving a trail.
@@ -32,6 +49,7 @@ def move(t, length):
     pu(t)
     fd(t, length)
     pd(t)
+
 
 world = TurtleWorld()
 bob = Turtle()

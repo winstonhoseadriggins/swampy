@@ -1,22 +1,22 @@
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
+
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
 """
 
-Solution to the Koch curve exercise.
-Think Python: An Introduction to Software Design
-Allen B. Downey
+try:
+    # see if Swampy is installed as a package
+    from swampy.TurtleWorld import *
+except ImportError:
+    # otherwise see if the modules are on the PYTHONPATH
+    from TurtleWorld import *
 
-"""
-
-from swampy.TurtleWorld import *
-
-world = TurtleWorld()
-bob = Turtle()
-bob.delay = 0
-
-bob.x = -150
-bob.y = 90
-bob.redraw()
 
 def koch(t, n):
+    """Draws a koch curve with length n."""
     if n<3:
         fd(t, n)
         return
@@ -29,13 +29,22 @@ def koch(t, n):
     lt(t, 60)
     koch(t, m)
 
+
 def snowflake(t, n):
+    """Draws a snowflake (a triangle with a Koch curve for each side)."""
     for i in range(3):
         koch(t, n)
         rt(t, 120)
 
-snowflake(bob, 300)
-die(bob)
 
-world.canvas.dump()
+world = TurtleWorld()
+bob = Turtle()
+bob.delay = 0
+
+bob.x = -150
+bob.y = 90
+bob.redraw()
+
+snowflake(bob, 300)
+
 world.mainloop()

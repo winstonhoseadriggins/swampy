@@ -1,26 +1,41 @@
-"""
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
 
-Solution to the letter-drawing exercise.
-Think Python: An Introduction to Software Design
-Allen B. Downey
-
-
-This file contains code that might be useful for debugging
-letter-drawing code.  The file letters.py should contain
-functions named draw_a, draw_b, etc.
-
-This program imports the functions from letters.py and uses
-them to implement a turtle typewriter.
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 """
 
-from letters import *
+"""
+To use this typewriter, you have to provide a module named letters.py
+that contains functions with names like draw_a, draw_b, etc.
+"""
 
-# the following is the code for the turtle typewriter.
+from time import sleep
+
+try:
+    # see if Swampy is installed as a package
+    from swampy.TurtleWorld import *
+except ImportError:
+    # otherwise see if the modules are on the PYTHONPATH
+    from TurtleWorld import *
+
+# check if the reader has provided letters.py
+try:
+    from letters import *
+except ImportError, e:
+    message = e.args[0]
+    if message.startswith('No module'):
+        raise ImportError(message + 
+                          '\nYou have to provide a module named letters.py')
+
+
+# The following is the code for the turtle typewriter.
 # it uses some features we haven't seen yet.
 
 def teleport(t, x, y):
-    """move the turtle to a position in absolute coordinates"""
+    """Moves the turtle to a position in absolute coordinates."""
 
     # This is an example of a function that breaks the layer
     # of abstraction provided by the Level 0 primitives!
@@ -30,30 +45,46 @@ def teleport(t, x, y):
     t.y = y
     t.redraw()
 
+
 def keypress(event):
-    # this function gets called when the user presses a key.
-    # the following try statement is a hack; don't emulate this.
+    """Handles the event when a user presses a key.
+
+    Checks if there is a function with the right name; otherwise
+    it prints an error message.
+    """
+    # if we're still drawing the previous letter, bail out
+    if bob.busy:
+        return
+    else:
+        bob.busy = True
+
+    # check if the user pressed return
+    if event.char in ['\n', '\r']:
+        teleport(bob, -180, bob.y-size*3)
+        bob.busy = False
+        return
+        
+    # figure out which function to call, and call it
     try:
-        # figure out which function to call, and call it
         func = eval('draw_' + event.char)
     except NameError:
         print "I don't know how to draw an", event.char
-        return
-    except SyntaxError:
-        # this happens when the user presses return
-        teleport(bob, -180, bob.y-size*3)
+        bob.busy = False
         return
 
     func(bob, size)
-    skip(bob, size/2)
 
-from swampy.TurtleWorld import *
+    skip(bob, size/2)
+    bob.busy = False
+
+
 world = TurtleWorld()
 
 # create and position the turtle
 size = 20
 bob = Turtle(world)
 bob.delay = 0.01
+bob.busy = False
 teleport(bob, -180, 150)
 
 # tell world to call keypress when the user presses a key

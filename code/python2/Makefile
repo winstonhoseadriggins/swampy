@@ -1,5 +1,7 @@
-FILES = Wanderer.py Highway.py color_list.py imdb.py spiral.py \
-lumpy_diag05.py color_space.py \
+FILES = do_four.py 	grid.py 	polygon.py \
+Wanderer.py Highway.py color_list.py    spiral.py \
+lumpy_diag05.py color_space.py          koch.py  \
+pi.py 	cartalk.py  words.txt\
 button_demo.py  draggable_demo.py   pack_demo.py \
 canvas_demo.py  image_demo.py       pil_demo.py \
 circle_demo.py  menubutton_demo.py  widget_demo.py \
@@ -9,7 +11,9 @@ Popup.py	PopupDemo.py	PopupServer.py	PopupClient.py \
 Threader.py	Threader_soln.py	Card.py	PokerHand.py \
 Shape.py	Poker.py	PokerExam.py \
 flower.py	letters.py	typewriter.py   pie.py \
-Time1.py	Time1_soln.py
+Time1.py	Time1_soln.py \
+Point1.py	Point1_soln.py
+
 
 DOCS = remote_object.html
 

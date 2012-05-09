@@ -1,13 +1,14 @@
-"""
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
 
-pronounce module
-Allen B. Downey
-
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 """
 
 def read_dictionary(filename='c06d'):
-    """read (filename) and build a dictionary that maps from
+    """Reads from a file and builds a dictionary that maps from
     each word to a string that describes its primary pronunciation.
 
     Secondary pronunciations are added to the dictionary with
@@ -27,6 +28,7 @@ def read_dictionary(filename='c06d'):
         d[word] = pron
 
     return d
+
 
 if __name__ == '__main__':
     d = read_dictionary()

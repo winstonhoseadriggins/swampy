@@ -1,16 +1,17 @@
-"""
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
 
-Solution to the homophone Car Talk Puzzler
-Think Python
-Allen B. Downey
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 """
 
 from pronounce import read_dictionary
-phonetic = read_dictionary()
 
-def make_word_list():
-    """read the words in words.txt and return a dictionary
+
+def make_word_dict():
+    """Read the words in words.txt and return a dictionary
     that contains the words as keys"""
     d = dict()
     fin = open('words.txt')
@@ -20,37 +21,50 @@ def make_word_list():
 
     return d
 
-wordlist = make_word_list()
 
-def homophones(a, b):
-    """return True if words (a) and (b) can be pronounced the
-    same way, False otherwise.
+def homophones(a, b, phonetic):
+    """Checks if words two can be pronounced the same way.
 
     If either word is not in the pronouncing dictionary, return False
+
+    a, b: strings
+    phonetic: map from words to pronunciation codes
     """
     if a not in phonetic or b not in phonetic:
         return False
 
     return phonetic[a] == phonetic[b]
 
-def check_word(word):
-    """check to see if the word has the following property:
-    removing the first letter yields a word in (d),
-    and removing the second letter yields a word in (d)."""
+
+def check_word(word, word_dict, phonetic):
+    """Checks to see if the word has the following property:
+    removing the first letter yields a word with the same
+    pronunciation, and removing the second letter yields a word
+    with the same pronunciation.
+
+    word: string
+    word_dict: dictionary with words as keys
+    phonetic: map from words to pronunciation codes
+    """
     word1 = word[1:] 
-    if word1 not in wordlist: return False
-    if not homophones(word, word1): return False
+    if word1 not in word_dict:
+        return False
+    if not homophones(word, word1, phonetic):
+        return False
 
     word2 = word[0] + word[2:]
-    if word2 not in wordlist: return False
-    if not homophones(word, word2): return False
+    if word2 not in word_dict:
+        return False
+    if not homophones(word, word2, phonetic):
+        return False
 
     return True
 
-def check_all_words():
-    for word in wordlist:
-        if check_word(word):
-            print word
 
-check_all_words()
+if __name__ == '__main__':
+    phonetic = read_dictionary()
+    word_dict = make_word_dict()
 
+    for word in word_dict:
+        if check_word(word, word_dict, phonetic):
+            print word, word[1:], word[0] + word[2:]

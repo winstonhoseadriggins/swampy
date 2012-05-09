@@ -1,7 +1,8 @@
 FILES = do_four.py 	grid.py 	polygon.py \
 Wanderer.py Highway.py color_list.py    spiral.py \
 lumpy_diag05.py color_space.py          koch.py  \
-pi.py 	words.txt  birthday.py \
+pi.py 	words.txt  birthday.py  wordlist.py reverse_pair.py 
+interlock.py rotate.py \
 cartalk1.py  cartalk2.py  cartalk3.py  \
 button_demo.py  draggable_demo.py   pack_demo.py \
 canvas_demo.py  image_demo.py       pil_demo.py \

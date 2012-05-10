@@ -10,6 +10,7 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 import string
 import random
 
+
 def process_file(filename, skip_header):
     """Makes a histogram that contains the words from a file.
 

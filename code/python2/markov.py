@@ -1,31 +1,56 @@
-# Homework 5 Solutions
-# Software Design
-# Allen Downey
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
 
-# This version of the random text generator doesn't use
-# object-oriented features.
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
+"""
 
 import sys
 import string
 import random
 
 # global variables
-map = {}               # the map from prefixes onto a list of suffixes
+map = {}               # the map from prefixes to a list of suffixes
 prefix = ()            # the current tuple of words
 
+
 def process_file(filename, order=2):
-    """read the given file and build the dictionary that maps
-    each prefix to the list of possible suffixes.  The optional
-    argument, order, controls the number of words in the prefixes."""
-    for line in open(filename):
+    """Reads a file and performs Markov analysis.
+
+    filename: string
+    order: integer number of words in the prefix
+
+    Returns: map from prefix to list of possible suffixes.
+    """
+    fp = open(filename)
+    skip_gutenberg_header(fp)
+
+    for line in fp:
         for word in line.rstrip().split():
             process_word(word, order)
 
-def process_word(word, order=2):
-    """process each word.  During the first few iterations,
-    all we do is store up the words; after that we start adding
-    entries to the dictionary."""
 
+def skip_gutenberg_header(fp):
+    """Reads from fp until it finds the line that ends the header.
+
+    fp: open file object
+    """
+    for line in fp:
+        if line.startswith('*END*THE SMALL PRINT!'):
+            break
+
+
+def process_word(word, order=2):
+    """Processes each word.
+
+    word: string
+    order: integer
+
+    During the first few iterations, all we do is store up the words; 
+    after that we start adding entries to the dictionary.
+    """
     global prefix
     if len(prefix) < order:
         prefix += (word,)
@@ -39,10 +64,14 @@ def process_word(word, order=2):
 
     prefix = shift(prefix, word)
 
+
 def random_text(n=100):
-    """generate n random words, starting with a random prefix
-    from the dictionary"""
-    
+    """Generates random wordsfrom the analyzed text.
+
+    Starts with a random prefix from the dictionary.
+
+    n: number of words to generate
+    """
     # choose a random prefix (not weighted by frequency)
     prefix = random.choice(map.keys())
     
@@ -59,9 +88,17 @@ def random_text(n=100):
         print word,
         prefix = shift(prefix, word)
 
+
 def shift(t, word):
-    """form a new tuple by removing the head and adding word to the tail"""
+    """Forms a new tuple by removing the head and adding word to the tail.
+
+    t: tuple of strings
+    word: string
+
+    Returns: tuple of strings
+    """
     return t[1:] + (word,)
+
 
 def main(name, filename='', n=100, order=2, *args):
     try:
@@ -72,6 +109,7 @@ def main(name, filename='', n=100, order=2, *args):
     else: 
         process_file(filename, order)
         random_text(n)
+
 
 if __name__ == '__main__':
     main(*sys.argv)

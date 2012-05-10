@@ -4,7 +4,7 @@ lumpy_diag05.py color_space.py          koch.py  \
 pi.py 	words.txt  birthday.py  wordlist.py reverse_pair.py  \
 interlock.py  rotate.py  rotate_pairs.py  structshape.py \
 anagram_sets.py  metathesis.py  reducible.py \
-analyze_book.py analyze_book2.py analyze_book3.py \
+analyze_book.py analyze_book2.py analyze_book3.py markov.py \
 cartalk1.py  cartalk2.py  cartalk3.py  \
 button_demo.py  draggable_demo.py   pack_demo.py \
 canvas_demo.py  image_demo.py       pil_demo.py \

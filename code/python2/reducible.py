@@ -1,14 +1,15 @@
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
+
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
 """
 
-Solution to the reducible word Car Talk Puzzler
-Think Python
-Allen B. Downey
-
-"""
-
-def make_word_list():
-    """read the words in words.txt and return a dictionary
-    that contains the words as keys"""
+def make_word_dict():
+    """Reads the words in words.txt and returns a dictionary
+    that contains the words as keys."""
     d = dict()
     fin = open('words.txt')
     for line in fin:
@@ -21,40 +22,34 @@ def make_word_list():
         d[letter] = letter
     return d
 
-wordlist = make_word_list()
-
-"""a string is reducible if it has at least one child that is 
-reducible.  The empty string is also reducible."""
 
 """memo is a dictionary that maps from each word that is known
 to be reducible to a list of its reducible children.  It starts
 with the empty string."""
 
-memo = dict()
+memo = {}
 memo[''] = ['']
 
-def children(word):
-    """build and return a list of all words that can be formed
-    by removing one letter from (word)"""
-    res = []
-    for i in range(len(word)):
-        child = word[:i] + word[i+1:]
-        if child in wordlist:
-            res.append(child)
-    return res
 
-def reduce(word):
-    """if this word is reducible, return a list of its reducible
-    children; also add an entry to the memo dictionary."""
+def is_reducible(word, word_dict):
+    """If word is reducible, returns a list of its reducible children.
 
+    Also adds an entry to the memo dictionary.
+
+    A string is reducible if it has at least one child that is 
+    reducible.  The empty string is also reducible.
+
+    word: string
+    word_dict: dictionary with words as keys
+    """
      # if have already checked this word, return the answer
     if word in memo:
         return memo[word]
 
     # check each of the children and make a list of the reducible ones
     res = []
-    for child in children(word):
-        t = reduce(child)
+    for child in children(word, word_dict):
+        t = is_reducible(child, word_dict)
         if t:
             res.append(child)
 
@@ -62,29 +57,51 @@ def reduce(word):
     memo[word] = res
     return res
 
-def reduce_all_words():
-    """check all the words in the wordlist.  Return a list
-    of the ones that are reducible.
+
+def children(word, word_dict):
+    """Returns a list of all words that can be formed by removing one letter.
+
+    word: string
+
+    Returns: list of strings
     """
     res = []
-    for word in wordlist:
-        t = reduce(word)
+    for i in range(len(word)):
+        child = word[:i] + word[i+1:]
+        if child in word_dict:
+            res.append(child)
+    return res
+
+
+def all_reducible(word_dict):
+    """Checks all words in the word_dict; returns a list reducible ones.
+
+    word_dict: dictionary with words as keys
+    """
+    res = []
+    for word in word_dict:
+        t = is_reducible(word, word_dict)
         if t != []:
             res.append(word)
     return res
 
+
 def print_trail(word):
-    """print the sequence of words that reduces this word to the
-    empty string; if there is more than one choice, it chooses the
-    first."""
+    """Prints the sequence of words that reduces this word to the empty string.
+
+    If there is more than one choice, it chooses the first.
+
+    word: string
+    """
     if len(word) == 0:
         return
     print word,
-    t = reduce(word)
+    t = is_reducible(word, word_dict)
     print_trail(t[0])
 
-def print_longest_words():
-    words = reduce_all_words()
+
+def print_longest_words(word_dict):
+    words = all_reducible(word_dict)
 
     # use DSU to sort by word length
     t = []
@@ -97,4 +114,7 @@ def print_longest_words():
         print_trail(word)
         print '\n'
 
-print_longest_words()
+
+if __name__ == '__main__':
+    word_dict = make_word_dict()
+    print_longest_words(word_dict)

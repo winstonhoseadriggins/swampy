@@ -6,6 +6,7 @@ interlock.py  rotate.py  rotate_pairs.py  structshape.py \
 anagram_sets.py  metathesis.py  reducible.py \
 analyze_book.py analyze_book2.py analyze_book3.py markov.py \
 cartalk1.py  cartalk2.py  cartalk3.py  walk.py \
+sed.py  anagram_db.py find_duplicates.py \
 button_demo.py  draggable_demo.py   pack_demo.py \
 canvas_demo.py  image_demo.py       pil_demo.py \
 circle_demo.py  menubutton_demo.py  widget_demo.py \

@@ -1,9 +1,19 @@
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
+
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
+"""
+
 from swampy.TurtleWorld import *
+from swampy.World import Interpreter
 
 class SimpleTurtleWorld(TurtleWorld):
-    """an environment for Turtles and TurtleControls.
+    """An environment for Turtles and TurtleControls.
 
-    This class is identical to TurtleWorld, but the code that
+    This class is similar to TurtleWorld, but the code that
     lays out the GUI is simplified for explanatory purposes.
     """
 

@@ -15,6 +15,7 @@ from Wobbler import *
 class Missed(Exception):
     """Exception raised when a turtle tries to tag someone too far away."""
 
+
 class Tagger(Wobbler):
     """Represents a Turtle that plays tag."""
 

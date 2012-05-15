@@ -5,9 +5,9 @@ pi.py 	words.txt  birthday.py  wordlist.py reverse_pair.py  \
 interlock.py  rotate.py  rotate_pairs.py  structshape.py \
 anagram_sets.py  metathesis.py  reducible.py \
 analyze_book.py analyze_book2.py analyze_book3.py markov.py \
-cartalk1.py  cartalk2.py  cartalk3.py  walk.py \
+cartalk1.py  cartalk2.py  cartalk3.py  walk.py zip_code.py \
 sed.py  anagram_db.py find_duplicates.py invert_dict.py 
-Map.py has_duplicates.py unstable_sort.py \
+Map.py has_duplicates.py unstable_sort.py most_frequent.py \
 button_demo.py  draggable_demo.py   pack_demo.py \
 canvas_demo.py  image_demo.py       pil_demo.py \
 circle_demo.py  menubutton_demo.py  widget_demo.py \
@@ -15,6 +15,7 @@ remote_object.py	MathServer.py 	MathClient.py \
 thread.py	Subject.py	Observer.py	Modifier.py \
 Popup.py	PopupDemo.py	PopupServer.py	PopupClient.py \
 Threader.py	Threader_soln.py	Card.py	PokerHand.py \
+PokerHandSoln.py \
 Shape.py	Poker.py	PokerExam.py \
 flower.py	letters.py	typewriter.py   pie.py \
 Time1.py	Time1_soln.py \

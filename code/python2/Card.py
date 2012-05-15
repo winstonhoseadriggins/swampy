@@ -103,13 +103,16 @@ class Hand(Deck):
         self.label = label
 
 
-def find_defining_class(obj, meth_name):
+def find_defining_class(obj, method_name):
     """Finds and returns the class object that will provide 
-    the definition of meth_name (as a string) if it is
+    the definition of method_name (as a string) if it is
     invoked on obj.
+
+    obj: any python object
+    method_name: string method name
     """
     for ty in type(obj).mro():
-        if meth_name in ty.__dict__:
+        if method_name in ty.__dict__:
             return ty
     return None
 

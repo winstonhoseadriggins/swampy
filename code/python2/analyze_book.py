@@ -46,7 +46,7 @@ def process_line(line, hist):
     Modifies hist.
 
     line: string
-    hist: histogram (map from word to frequency
+    hist: histogram (map from word to frequency)
     """
     # replace hyphens with spaces before splitting
     line = line.replace('-', ' ')

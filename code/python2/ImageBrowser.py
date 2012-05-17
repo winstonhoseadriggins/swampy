@@ -1,11 +1,9 @@
-"""
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
 
-Solution to an exercise from
-Think Python: An Introduction to Software Design
-Allen B. Downey
-
-This program requires Gui.py, which is part of
-Swampy; you can download it from thinkpython.com/swampy.
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 This program started with a recipe by Noah Spurrier at
 http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/521918
@@ -53,9 +51,11 @@ class ImageBrowser(Gui):
         self.tkpi = ImageTk.PhotoImage(image)
         self.button.config(image=self.tkpi)
 
+
 def main(script, dirname='.'):
     g = ImageBrowser()
     g.image_loop(dirname)
+
 
 if __name__ == '__main__':
     main(*sys.argv)

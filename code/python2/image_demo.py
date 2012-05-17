@@ -1,15 +1,14 @@
-"""Solution to an exercise from
-Think Python: An Introduction to Software Design
+"""This module contains code from
+Think Python by Allen B. Downey
+http://thinkpython.com
 
-Copyright 2010 Allen B. Downey
+Copyright 2012 Allen B. Downey
 License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
-
-This program requires Gui.py, which is part of
-Swampy; you can download it from thinkpython.com/swampy.
 
 """
 
 from swampy.Gui import *
+from Tkinter import PhotoImage
 
 g = Gui()
 photo = PhotoImage(file='danger.gif')

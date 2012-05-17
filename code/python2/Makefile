@@ -17,7 +17,7 @@ Popup.py	PopupDemo.py	PopupServer.py	PopupClient.py \
 Threader.py	Threader_soln.py	Card.py	PokerHand.py \
 PokerHandSoln.py Tagger.py \
 lumpy_demo1.py lumpy_demo2.py lumpy_demo3.py lumpy_demo4.py \
-lumpy_demo5.py lumpy_demo6.py lumpy_demo7.py \
+lumpy_demo5.py lumpy_demo6.py lumpy_demo7.py lumpy_demo8.py \
 Shape.py	Poker.py	PokerExam.py \
 flower.py	letters.py	typewriter.py   pie.py \
 Time1.py	Time1_soln.py \
@@ -37,7 +37,7 @@ docs:
 	pydoc -w remote_object
 
 FIGS = lumpy_demo1.pdf lumpy_demo2.pdf lumpy_demo3.pdf lumpy_demo4.pdf \
-lumpy_demo5.pdf lumpy_demo6.pdf lumpy_demo7.pdf
+lumpy_demo5.pdf lumpy_demo6.pdf lumpy_demo7.pdf lumpy_demo8.pdf
 
 FIG_DEST = /home/downey/thinkpython/trunk/figs
 

@@ -24,7 +24,7 @@ def instantiate(constructor):
     """Instantiates a new object."""
     obj = constructor()
     lumpy.object_diagram()
-    #print_diagram(lumpy, 'lumpy_demo6.eps')
+    print_diagram(lumpy, 'lumpydemo6.eps')
     return obj
 
 point = instantiate(Point)

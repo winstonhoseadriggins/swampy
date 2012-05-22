@@ -15,7 +15,7 @@ def countdown(n):
     if n <= 0:
         print 'Blastoff!'
         lumpy.object_diagram()
-        print_diagram(lumpy, 'lumpy_demo2.eps')
+        print_diagram(lumpy, 'lumpydemo2.eps')
     else:
         print n
         countdown(n-1)

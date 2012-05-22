@@ -19,5 +19,5 @@ numbers = [17, 123]
 empty = []
 
 lumpy.object_diagram()
-print_diagram(lumpy, 'lumpy_demo3.eps')
+print_diagram(lumpy, 'lumpydemo3.eps')
 

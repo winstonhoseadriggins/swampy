@@ -36,8 +36,8 @@ code:
 docs:
 	pydoc -w remote_object
 
-FIGS = lumpy_demo1.pdf lumpy_demo2.pdf lumpy_demo3.pdf lumpy_demo4.pdf \
-lumpy_demo5.pdf lumpy_demo6.pdf lumpy_demo7.pdf lumpy_demo8.pdf
+FIGS = lumpydemo1.pdf lumpydemo2.pdf lumpydemo3.pdf lumpydemo4.pdf \
+lumpydemo5.pdf lumpydemo6.pdf lumpydemo7.pdf lumpydemo8.pdf
 
 FIG_DEST = /home/downey/thinkpython/trunk/figs
 

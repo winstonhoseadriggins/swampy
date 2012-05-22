@@ -21,7 +21,7 @@ hand = PokerHand()
 deck.move_cards(hand, 7)
 
 lumpy.class_diagram()
-print_diagram(lumpy, 'lumpy_demo8.eps')
+print_diagram(lumpy, 'lumpydemo8.eps')
 
 
 

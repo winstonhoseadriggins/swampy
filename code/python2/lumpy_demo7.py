@@ -30,7 +30,7 @@ box.corner.x = 0.0
 box.corner.y = 0.0
 
 lumpy.class_diagram()
-print_diagram(lumpy, 'lumpy_demo7.eps')
+print_diagram(lumpy, 'lumpydemo7.eps')
 
 
 

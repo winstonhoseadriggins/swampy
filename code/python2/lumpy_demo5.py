@@ -32,7 +32,7 @@ box.corner.y = 0.0
 box2 = copy.copy(box)
 
 lumpy.object_diagram()
-#print_diagram(lumpy, 'lumpy_demo5.eps')
+print_diagram(lumpy, 'lumpydemo5.eps')
 
 
 

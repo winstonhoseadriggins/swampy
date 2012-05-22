@@ -37,5 +37,5 @@ hist = histogram('parrot')
 inverse = invert_dict(hist)
 
 lumpy.object_diagram()
-print_diagram(lumpy, 'lumpy_demo4.eps')
+print_diagram(lumpy, 'lumpydemo4.eps')
 

@@ -12,8 +12,8 @@ import string
 import random
 
 # global variables
-map = {}               # the map from prefixes to a list of suffixes
-prefix = ()            # the current tuple of words
+suffix_map = {}        # map from prefixes to a list of suffixes
+prefix = ()            # current tuple of words
 
 
 def process_file(filename, order=2):
@@ -57,10 +57,10 @@ def process_word(word, order=2):
         return
 
     try:
-        map[prefix].append(word)
+        suffix_map[prefix].append(word)
     except KeyError:
         # if there is no entry for this prefix, make one
-        map[prefix] = [word]
+        suffix_map[prefix] = [word]
 
     prefix = shift(prefix, word)
 
@@ -73,12 +73,12 @@ def random_text(n=100):
     n: number of words to generate
     """
     # choose a random prefix (not weighted by frequency)
-    prefix = random.choice(map.keys())
+    start = random.choice(suffix_map.keys())
     
     for i in range(n):
-        suffixes = map.get(prefix, None)
+        suffixes = suffix_map.get(start, None)
         if suffixes == None:
-            # if the prefix isn't in map, we got to the end of the
+            # if the start isn't in map, we got to the end of the
             # original text, so we have to start again.
             random_text(n-i)
             return
@@ -86,7 +86,7 @@ def random_text(n=100):
         # choose a random suffix
         word = random.choice(suffixes)
         print word,
-        prefix = shift(prefix, word)
+        start = shift(start, word)
 
 
 def shift(t, word):

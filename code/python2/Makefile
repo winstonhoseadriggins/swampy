@@ -20,8 +20,10 @@ lumpy_demo1.py lumpy_demo2.py lumpy_demo3.py lumpy_demo4.py \
 lumpy_demo5.py lumpy_demo6.py lumpy_demo7.py lumpy_demo8.py \
 Shape.py	Poker.py	PokerExam.py \
 flower.py	letters.py	typewriter.py   pie.py \
-Time1.py	Time1_soln.py \
-Point1.py	Point1_soln.py
+Time1.py	Time1_soln.py   stack_diagram.py  \
+Time2.py	Time2_soln.py   palindrome_soln.py \
+Point1.py	Point1_soln.py \
+ackermann.py    ackermann_memo.py
 
 
 DOCS = remote_object.html
@@ -37,7 +39,9 @@ docs:
 	pydoc -w remote_object
 
 FIGS = lumpydemo1.pdf lumpydemo2.pdf lumpydemo3.pdf lumpydemo4.pdf \
-lumpydemo5.pdf lumpydemo6.pdf lumpydemo7.pdf lumpydemo8.pdf
+lumpydemo5.pdf lumpydemo6.pdf lumpydemo7.pdf lumpydemo8.pdf \
+lumpydemo1.eps lumpydemo2.eps lumpydemo3.eps lumpydemo4.eps \
+lumpydemo5.eps lumpydemo6.eps lumpydemo7.eps lumpydemo8.eps
 
 FIG_DEST = /home/downey/thinkpython/trunk/figs
 

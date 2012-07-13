@@ -91,7 +91,7 @@ class Transform:
     def __init__(self, rot, org, source=None):
         """Instantiates a Transform.
 
-        rot: rotation matrix
+        rot: Rotation object
         org: origin Vector
         source: source Frame
         """

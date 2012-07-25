@@ -16,9 +16,7 @@ from Time1 import *
 
 def is_after(t1, t2):
     """Returns True if t1 is after t2; false otherwise."""
-    return (t1.hour > t2.hour or 
-            t1.minute > t2.minute or
-            t1.second > t2.second)
+    return (t1.hour, t1.minute, t1.second) > (t2.hour, t2.minute, t2.second)
 
 
 def increment(t1, seconds):

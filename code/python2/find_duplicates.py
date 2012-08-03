@@ -21,7 +21,7 @@ def walk(dirname):
         if os.path.isfile(path):
             names.append(path)
         else:
-            walk(path)
+            names.extend(walk(path))
     return names
 
 

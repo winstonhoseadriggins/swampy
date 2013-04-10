@@ -49,7 +49,7 @@ def plot_ranks(hist, scale='log'):
     pyplot.show()
 
 
-def main(name, filename='emma.txt', flag='print', *args):
+def main(name, filename='emma.txt', flag='plot', *args):
     hist = process_file('emma.txt', skip_header=True)
 
     # either print the results or plot them

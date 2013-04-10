@@ -259,11 +259,11 @@ def main(name):
 
     theta = math.pi/2
 
-    v_o = Vector.from_list([0, 0, 0], None)
-    o = Frame('O')
-    orig = Transform(None, v_o, o)
+    #v_o = Vector.from_list([0, 0, 0], None)
+    origin = Frame('O')
+    #o_trans = Transform(None, v_o, origin)
 
-    xhat = Vector.from_list([1, 0, 0], o)
+    xhat = Vector.from_list([1, 0, 0], origin)
     rx = Rotation.from_axis(xhat, theta)
     a = Frame('A')
     t_ao = Transform(rx, xhat, a)
@@ -290,7 +290,7 @@ def main(name):
     p = t_ao(p_a)
     println(p)
 
-    map = shortest_path(o, Frame.roster)
+    map = shortest_path(origin, Frame.roster)
     print_shortest_path(map)
     
     cbao = t_ao(t_ba(t_cb))
@@ -301,7 +301,7 @@ def main(name):
     p_c = inv(p)
     println(p_c)
 
-    map = shortest_path(o, Frame.roster)
+    map = shortest_path(origin, Frame.roster)
     print_shortest_path(map)
 
         

@@ -11,7 +11,7 @@ import myplot
 class Pmf(Counter):
     """A Counter with probabilities."""
 
-    def normalize(self):
+    def Normalize(self):
         """Normalizes the PMF so the probabilities add to 1."""
         total = float(sum(self.values()))
         for key in self:
@@ -42,7 +42,7 @@ class Pmf(Counter):
 
 
 d6 = Pmf([1,2,3,4,5,6])
-d6.normalize()
+d6.Normalize()
 print d6
 d6.name = 'one die'
 

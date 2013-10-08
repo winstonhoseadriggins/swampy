@@ -42,8 +42,9 @@ if __name__ == '__main__':
         if interlock(word_list, word):
             print word, word[::2], word[1::2]
 
-    for word in word_list:
-        if interlock_general(word_list, word, 3):
-            print word, word[0::3], word[1::3], word[2::3]
+
+#    for word in word_list:
+#        if interlock_general(word_list, word, 3):
+#            print word, word[0::3], word[1::3], word[2::3]
 
 

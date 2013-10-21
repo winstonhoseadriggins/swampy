@@ -14,6 +14,9 @@ def read_dictionary(filename='c06d'):
     Secondary pronunciations are added to the dictionary with
     a number, in parentheses, at the end of the key, so the
     key for the second pronunciation of "abdominal" is "abdominal(2)".
+
+    filename: string
+    returns: map from string to pronunciation
     """
     d = dict()
     fin = open(filename)

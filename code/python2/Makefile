@@ -23,7 +23,8 @@ flower.py   letters.py   typewriter.py   pie.py \
 Time1.py   Time1_soln.py   stack_diagram.py  \
 Time2.py   Time2_soln.py   palindrome_soln.py \
 Point1.py   Point1_soln.py SimpleTurtleWorld.py \
-ackermann.py    ackermann_memo.py   inlist.py  zipf.py
+ackermann.py    ackermann_memo.py   inlist.py  zipf.py \
+pronounce.py  homophone.py
 
 
 DOCS = remote_object.html

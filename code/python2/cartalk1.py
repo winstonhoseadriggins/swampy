@@ -5,7 +5,7 @@ http://thinkpython.com
 Copyright 2012 Allen B. Downey
 License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
-http://www.cartalk.com/content/puzzler/transcripts/200725
+http://www.cartalk.com/content/seeing-double
 """
 
 def is_triple_double(word):

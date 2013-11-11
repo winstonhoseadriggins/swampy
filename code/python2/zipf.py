@@ -50,7 +50,7 @@ def plot_ranks(hist, scale='log'):
 
 
 def main(name, filename='emma.txt', flag='plot', *args):
-    hist = process_file('emma.txt', skip_header=True)
+    hist = process_file(filename, skip_header=True)
 
     # either print the results or plot them
     if flag == 'print':

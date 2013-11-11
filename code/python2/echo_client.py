@@ -1,6 +1,6 @@
 from socket import *
 
-HOST = 'rocky.olin.edu'           # the remote host
+HOST = '10.25.11.80'           # the remote host
 PORT = 50007                      # the same port used by the server
 
 csock = socket(AF_INET, SOCK_STREAM)

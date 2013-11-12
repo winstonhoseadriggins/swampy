@@ -35,9 +35,9 @@ python redis_demo.py
 """
 
 import os
+import random
 import redis
 import sys
-
 
 def main(script):
     host = 'dory.redistogo.com'
@@ -49,8 +49,8 @@ def main(script):
         print 'Environment variable REDIS_AUTH is not set.'
         sys.exit()
         
-    rdb = redis.StrictRedis(host=self.host, 
-                            port=self.port,
+    rdb = redis.StrictRedis(host=host, 
+                            port=port,
                             password=password,
                             db=0)
 
@@ -67,21 +67,21 @@ def main(script):
     # http://redis.io/commands#list
     rdb.rpush('list', 'elt1')
     rdb.rpush('list', 'elt2')
-    print rdb.lindex(0)
+    print rdb.lindex('list', 0)
 
     # http://redis.io/commands#set
     for c in 'allen':
         rdb.sadd('set', c)
-    rdb.sunion(set('downey'))
-    print rdb.smembers()
+    rdb.sunion('set', set('downey'))
+    print rdb.smembers('set')
 
     # http://redis.io/commands#sorted_set
-    for name in ['abc1', 'Abc2', 'aBc3']:
-        score = name.lower()
-        rdb.zadd('sset', score, name)
+    for c in 'abcdefg':
+        score = random.random()
+        rdb.zadd('sset', score, c)
 
-    for name in rdb.zrange():
-        print name
+    for name, score in rdb.zrange('sset', 0, 100, withscores=True):
+        print name, score
 
 
 if __name__ == '__main__':

@@ -175,7 +175,7 @@ class TextView(object):
             print game_id, self.model.get_game_state(game_id)
     
 
-def main(script, command='collect'):
+def main(script):
     model = Model()
     view = TextView(model)
     controller = Controller(model)

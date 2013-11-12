@@ -1,11 +1,19 @@
-import Lumpy
-lumpy = Lumpy.Lumpy()
+"""This file contains code for use with "Think Bayes",
+by Allen B. Downey, available from greenteapress.com
+
+Copyright 2013 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+"""
+
+from swampy.Lumpy import Lumpy
+
+lumpy = Lumpy()
 lumpy.make_reference()
 
-class Rectangle:
+class Rectangle(object):
     pass
 
-class Point:
+class Point(object):
     pass
 
 def find_center(box):
@@ -26,3 +34,4 @@ box.corner.y = 20
 
 center = find_center(box)
 
+lumpy.class_diagram()

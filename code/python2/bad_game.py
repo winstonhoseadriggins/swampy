@@ -51,10 +51,10 @@ class Model(object):
             print 'Environment variable REDIS_AUTH is not set.'
             sys.exit()
         
-        self.r = redis.StrictRedis(host=self.host, 
-                                   port=self.port,
-                                   password=password,
-                                   db=0)
+        self.r = redis.Redis(host=self.host, 
+                             port=self.port,
+                             password=password,
+                             db=0)
 
     def key(self, game_id):
         """Makes a key for a given game ID.
@@ -187,13 +187,13 @@ def main(script):
     game_id = controller.new_game()
 
     print 'Games'
-    view.print_games()
+    view.display_games()
 
     print 'Playing game', game_id
     controller.play_game(game_id)
 
     print 'Games'
-    view.print_games()
+    view.display_games()
 
 
 if __name__ == '__main__':

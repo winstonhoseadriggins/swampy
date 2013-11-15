@@ -49,10 +49,10 @@ def main(script):
         print 'Environment variable REDIS_AUTH is not set.'
         sys.exit()
         
-    rdb = redis.StrictRedis(host=host, 
-                            port=port,
-                            password=password,
-                            db=0)
+    rdb = redis.Redis(host=host, 
+                      port=port,
+                      password=password,
+                      db=0)
 
     # http://redis.io/commands#string
     rdb.set('foo', 'bar')
@@ -74,14 +74,6 @@ def main(script):
         rdb.sadd('set', c)
     rdb.sunion('set', set('downey'))
     print rdb.smembers('set')
-
-    # http://redis.io/commands#sorted_set
-    for c in 'abcdefg':
-        score = random.random()
-        rdb.zadd('sset', score, c)
-
-    for name, score in rdb.zrange('sset', 0, 100, withscores=True):
-        print name, score
 
 
 if __name__ == '__main__':
